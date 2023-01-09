@@ -2,24 +2,16 @@
 
 class Rotas 
 {
-    public static function rotas($notaObjeto, $dados = []) 
+    public static function rotas($notaObjeto) 
     {
         return  [
-            '/notas' => ['GET', $notaObjeto->notas()],
-            '/nota' => ['GET', $notaObjeto->nota($dados['id'])],
-            '/nota/salvar' => 'nota salva',
-            '/nota/apagar' => 'apagando nota',
-            '/nota/atualizar' => 'atualizando nota' 
+            '/notas' => ['GET', $notaObjeto,'notas'],
+            '/nota' => ['GET', $notaObjeto, 'nota'],
+            '/nota/salvar' => ['POST', $notaObjeto, 'salvarNota'],
+            '/nota/apagar' => ['DELETE', $notaObjeto, 'apagarNota'],
+            '/nota/atualizar' => ['PUT', $notaObjeto, 'atualizarNota'] 
         ];
 
     }
 
-    // public static function controladorRotas($rota)
-    // {
-
-    //     $metodos = [
-    //         'GET' => 
-    //     ]
-
-    // }
 }
